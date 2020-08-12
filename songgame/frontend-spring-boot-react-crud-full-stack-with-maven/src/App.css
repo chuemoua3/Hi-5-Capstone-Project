@@ -5,6 +5,7 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  background-image: url(/songgame/frontend-spring-boot-react-crud-full-stack-with-maven/public/guessthatsong6.png);
 }
 
 @media (prefers-reduced-motion: no-preference) {

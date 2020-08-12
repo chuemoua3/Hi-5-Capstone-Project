@@ -5,9 +5,59 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-image: url(/songgame/frontend-spring-boot-react-crud-full-stack-with-maven/public/guessthatsong6.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+   */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.logosize{
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  float: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+svg#play {
+  width:50px;
+ margin: 120px auto;
+ display:block;
+  cursor: pointer;
+  transform-origin: 50% 50%;
+}
+
+svg#play #triangle {
+  fill:rgba(22,22,22,0);
+  transition:500ms;
+  transform-origin: 50% 50%;
+}
+svg#play:hover #triangle {
+  fill:#A3CD3A;
+  transform-origin: 50% 50%;
+}
+
+ svg #lineOne, svg #lineTwo {
+  transform-origin: 50% 50%;
+  transition: 1s;
+} 
+
+ svg:hover #lineOne {
+  transform: rotate(260deg);
+   -webkit-transform: rotate(260deg);
+-moz-transform: rotate(260deg);
+-o-transform: rotate(260deg);
+   transform-origin: 50% 50%;
+} 
+
+ svg:hover #lineTwo {
+  transform: rotate(-450deg);
+   transform-origin: 50% 50%;
+} 
