@@ -1,20 +1,28 @@
-import React from 'react';
-// import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <img class="logosize" src="guessthatsong6.png" alt="guess that s"></img>
-        
-        
-     
-
-      </header>
-    </div>
-  );
+import Home from './components/Home';
+import Leaderboard from './components/Leaderboard';
+import Game from './components/Game';
+import Error from './components/Error';
+import Navigation from './components/Navigation';
+ 
+class App extends Component {
+  render() {
+    return (      
+       <BrowserRouter>
+        <div>
+          <Navigation />
+            <Switch>
+             <Route path="/" component={Home} exact/>
+             <Route path="/leaderboard" component={Leaderboard}/>
+             <Route path="/game" component={Game}/>
+            <Route component={Error}/>
+           </Switch>
+        </div> 
+      </BrowserRouter>
+    );
+  }
 }
-
+ 
 export default App;
