@@ -154,6 +154,7 @@ class App extends Component {
                 />
               )}
             ></Route>
+
             {this.state.result ? this.renderResult() : this.renderQuiz()}
             <Route component={Error} />
           </Switch>
