@@ -97,7 +97,7 @@ class App extends Component {
     const answersCountKeys = Object.keys(answersCount);
     const answersCountValues = answersCountKeys.map((key) => answersCount[key]);
     const maxAnswerCount = Math.max.apply(null, answersCountValues);
-
+    console.log(answersCount);
     return answersCountKeys.filter(
       (key) => answersCount[key] === maxAnswerCount
     );
@@ -114,7 +114,7 @@ class App extends Component {
   renderQuiz() {
     return (
       <Quiz
-        answer={this.state}
+        // answer={this.state}
         // answerOptions={this.state.answerOptions}
         // questionId={this.state.questionId}
         // question={this.state.question}

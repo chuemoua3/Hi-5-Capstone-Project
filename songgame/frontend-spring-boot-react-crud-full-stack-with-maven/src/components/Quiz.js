@@ -32,7 +32,7 @@ function Quiz(props) {
     // >
     
     <div>
-    {props.result ? <Result/> :
+    {props.result ? <Result result={props.result}/> :
       <div key={props.questionId}>
         <QuestionCount counter={props.questionId} total={props.questionTotal} />
         <Question content={props.question} />
