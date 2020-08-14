@@ -31,11 +31,28 @@ class App extends Component {
     const shuffledAnswerOptions = quizQuestions.map((question) =>
       this.shuffleArray(question.answers)
     );
+    //set this down for axios
     this.setState({
       question: quizQuestions[0].question,
       answerOptions: shuffledAnswerOptions[0],
     });
   }
+
+//   getQuestions(){
+//   //example
+//   axios.get('/quiz')
+//   .then(function (response) {
+//     // handle success
+//     console.log(response);
+//   })
+//   .catch(function (error) {
+//     // handle error
+//     console.log(error);
+//   })
+//   .finally(function () {
+//     // always executed
+//   });
+// }
 
   shuffleArray(array) {
     var currentIndex = array.length,
