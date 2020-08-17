@@ -9,6 +9,7 @@ import Navigation from "./components/Navigation";
 import Quiz from "./components/Quiz";
 import quizQuestions from "./fakequestions/quizQuestions";
 import Result from "./components/Result";
+import axios from 'axios';
 
 class App extends Component {
   constructor(props) {

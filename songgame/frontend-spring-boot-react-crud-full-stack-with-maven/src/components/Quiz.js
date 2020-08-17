@@ -5,6 +5,7 @@ import Result from '../components/Result';
 import Question from '../components/Question';
 import QuestionCount from '../components/QuestionCount';
 import AnswerOption from '../components/AnswerOption';
+import axios from 'axios';
 
 function Quiz(props) {
   function renderAnswerOptions(key) {
