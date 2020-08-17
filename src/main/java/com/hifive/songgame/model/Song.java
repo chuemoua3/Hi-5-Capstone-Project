@@ -11,7 +11,7 @@ import lombok.Data;
 public class Song {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private int id;
+    // private Long id;
     
     private String title;
     private String artist;
@@ -20,8 +20,8 @@ public class Song {
 
     public Song(){}
 
-    public Song(int id, String title, String artist, String lyrics, String genre){
-        this.id = id;
+    public Song(String title, String artist, String lyrics, String genre){
+        // this.id = id;
         this.title = title;
         this.lyrics = lyrics;
         this.genre = genre;
