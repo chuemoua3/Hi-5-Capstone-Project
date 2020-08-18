@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS songs;
+CREATE TABLE songs(title VARCHAR (255), artist VARCHAR(255), lyrics VARCHAR(1000), genre VARCHAR(255));

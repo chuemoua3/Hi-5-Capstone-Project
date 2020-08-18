@@ -46,5 +46,7 @@ public class DemoApplication implements CommandLineRunner {
 				"Ring of Fire"));
 		this.songRepository.save(new Song("test", "test", "test", "test"));
 
+		// this.songRepository.save(new Song());
+
 	}
 }
