@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 // import PropTypes from 'prop-types';
 // import { CSSTransitionGroup } from 'react-transition-group';
-import Result from '../components/Result';
-import Question from '../components/Question';
-import QuestionCount from '../components/QuestionCount';
-import AnswerOption from '../components/AnswerOption';
-import axios from 'axios';
+import Result from "../components/Result";
+import Question from "../components/Question";
+import QuestionCount from "../components/QuestionCount";
+import AnswerOption from "../components/AnswerOption";
+import axios from "axios";
 
 function Quiz(props) {
   function renderAnswerOptions(key) {
@@ -31,21 +31,27 @@ function Quiz(props) {
     //   transitionAppear
     //   transitionAppearTimeout={500}
     // >
-    
+
     <div>
-    {props.result ? <Result result={props.result}/> :
-      <div key={props.questionId}>
-        <QuestionCount counter={props.questionId} total={props.questionTotal} />
-        <Question content={props.question} />
-        
-        <ul className="answerOptions">
-          {props.answerOptions.map(renderAnswerOptions)}
-        </ul>
-      </div>
-    }
+      {props.result ? (
+        <Result result={props.result} />
+      ) : (
+        <div key={props.questionId}>
+          <QuestionCount
+            counter={props.questionId}
+            total={props.questionTotal}
+          />
+          <Question content={props.question} />
+
+          <ul className="answerOptions">
+            {props.answerOptions.map(renderAnswerOptions)}
+          </ul>
+        </div>
+      )}
     </div>
     // </CSSTransitionGroup>
   );
+
   // console.log(props.quizResult);
 }
 

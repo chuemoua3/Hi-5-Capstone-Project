@@ -3,13 +3,11 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Home from "./components/Home";
 import Leaderboard from "./components/Leaderboard";
-// import Game from './components/Game';
 import Error from "./components/Error";
 import Navigation from "./components/Navigation";
 import Quiz from "./components/Quiz";
 import quizQuestions from "./fakequestions/quizQuestions";
 import Result from "./components/Result";
-import axios from 'axios';
 
 class App extends Component {
   constructor(props) {
@@ -23,6 +21,7 @@ class App extends Component {
       answer: "",
       answersCount: {},
       result: "",
+      songs: [],
     };
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
@@ -39,21 +38,21 @@ class App extends Component {
     });
   }
 
-//   getQuestions(){
-//   //example
-//   axios.get('/quiz')
-//   .then(function (response) {
-//     // handle success
-//     console.log(response);
-//   })
-//   .catch(function (error) {
-//     // handle error
-//     console.log(error);
-//   })
-//   .finally(function () {
-//     // always executed
-//   });
-// }
+  //   getQuestions(){
+  //   //example
+  //   axios.get('/quiz')
+  //   .then(function (response) {
+  //     // handle success
+  //     console.log(response);
+  //   })
+  //   .catch(function (error) {
+  //     // handle error
+  //     console.log(error);
+  //   })
+  //   .finally(function () {
+  //     // always executed
+  //   });
+  // }
 
   shuffleArray(array) {
     var currentIndex = array.length,
@@ -108,8 +107,6 @@ class App extends Component {
     });
   }
 
-  
-
   getResults() {
     const answersCount = this.state.answersCount;
     const answersCountKeys = Object.keys(answersCount);
@@ -132,12 +129,12 @@ class App extends Component {
   renderQuiz() {
     return (
       <Quiz
-        // answer={this.state}
-        // answerOptions={this.state.answerOptions}
-        // questionId={this.state.questionId}
-        // question={this.state.question}
-        // questionTotal={quizQuestions.length}
-        // onAnswerSelected={this.handleAnswerSelected}
+      // answer={this.state}
+      // answerOptions={this.state.answerOptions}
+      // questionId={this.state.questionId}
+      // question={this.state.question}
+      // questionTotal={quizQuestions.length}
+      // onAnswerSelected={this.handleAnswerSelected}
       />
     );
   }
@@ -156,7 +153,7 @@ class App extends Component {
           <Switch>
             <Route path="/" component={Home} exact />
             <Route path="/leaderboard" component={Leaderboard} />
-            
+
             <Route
               path="/Quiz"
               render={() => (
