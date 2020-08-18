@@ -4,25 +4,25 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import lombok.Data;
 
-// @lombok
 @Entity
 public class Song {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    // private Long id;
-    
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     private String title;
     private String artist;
     private String lyrics;
     private String genre;
 
-    public Song(){}
+    public Song() {
+    }
 
-    public Song(String title, String artist, String lyrics, String genre){
+    public Song(String title, String artist, String lyrics, String genre) {
         // this.id = id;
         this.title = title;
+        this.artist = artist;
         this.lyrics = lyrics;
         this.genre = genre;
     }
@@ -59,8 +59,4 @@ public class Song {
         this.genre = genre;
     }
 
-    
-    
-
-    
 }

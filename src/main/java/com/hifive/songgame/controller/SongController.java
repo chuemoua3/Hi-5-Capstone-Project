@@ -13,40 +13,46 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-// import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
+@RequestMapping("api/")
 public class SongController {
-    
+
     @Autowired
-    SongRepository songRepository;
+    private SongRepository songRepository;
 
-    @PostMapping("/post")
-    public void postSong(@RequestBody Song song){
-        songRepository.save(song);
+    @GetMapping("songs")
+    public List<Song> getSongs() {
+        return this.songRepository.findAll();
+
     }
 
-    @PostMapping("/forcepost")
-    public void forcePostSong(){
-        songRepository.save(new Song("Get Jiggy", "Will Smith", "Get jiggy with it", "Pop"));
-    }
+    // @PostMapping("/post")
+    // public void postSong(@RequestBody Song song){
+    // songRepository.save(song);
+    // }
 
+    // @PostMapping("/forcepost")
+    // public void forcePostSong(){
+    // songRepository.save(new Song("Get Jiggy", "Will Smith", "Get jiggy with it",
+    // "Pop"));
+    // }
 
+    // @GetMapping("/all")
+    // public List<Song> getSong(){
+    // return songRepository.findAll();
+    // }
 
-    @GetMapping("/all")
-    public List<Song> getSong(){
-        return songRepository.findAll();
-    }
+    // @GetMapping("/{name}")
+    // public Song getSongByTitle(@PathVariable String title){
+    // return songRepository.findByName(title);
+    // }
 
-    @GetMapping("/{name}")
-    public Song getSongByTitle(@PathVariable String title){
-        return songRepository.findByName(title);
-    }
-
-    @GetMapping("/")
-    public String getWelcome(){
-        return "Welcome to my Backend Fam";
-    }
+    // @GetMapping("/")
+    // public String getWelcome(){
+    // return "Welcome to my Backend Fam";
+    // }
 }
